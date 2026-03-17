@@ -1,20 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Eye } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Vision() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section
-      id="vision"
-      className="relative py-28 px-4 md:px-8 overflow-hidden"
-    >
-      {/* Background */}
+    <section id="vision" className="relative py-28 px-4 md:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-primary" />
       <div
         className="absolute inset-0 opacity-5"
@@ -40,7 +37,7 @@ export default function Vision() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="block text-accent font-semibold text-sm uppercase tracking-widest mb-4"
         >
-          Our Vision
+          {t.vision.tag}
         </motion.span>
 
         <motion.h2
@@ -49,9 +46,9 @@ export default function Vision() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8"
         >
-          To be the most{" "}
-          <span className="text-accent">trusted partner</span> for
-          industrial and energy-sector solutions across the region.
+          {t.vision.headline1}{" "}
+          <span className="text-accent">{t.vision.headline2}</span>{" "}
+          {t.vision.headline3}
         </motion.h2>
 
         <motion.div
@@ -67,8 +64,7 @@ export default function Vision() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-8 text-white/70 text-lg max-w-2xl mx-auto"
         >
-          We envision a future where reliable, precision-engineered industrial
-          systems drive safe and efficient operations for every client we serve.
+          {t.vision.sub}
         </motion.p>
       </div>
     </section>

@@ -1,59 +1,47 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, Users, Globe, Wrench } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const stats = [
-  { icon: Award, value: "1994", label: "Year Founded" },
-  { icon: Users, value: "100+", label: "Clients Served" },
-  { icon: Globe, value: "Regional", label: "Market Reach" },
-  { icon: Wrench, value: "7+", label: "Product Categories" },
-];
+const icons = [Award, Users, Globe, Wrench];
 
 export default function About() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const stats = [
+    { icon: icons[0], value: t.about.stat1value, label: t.about.stat1label },
+    { icon: icons[1], value: t.about.stat2value, label: t.about.stat2label },
+    { icon: icons[2], value: t.about.stat3value, label: t.about.stat3label },
+    { icon: icons[3], value: t.about.stat4value, label: t.about.stat4label },
+  ];
 
   return (
     <section id="about" className="py-24 px-4 md:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
-              About Us
+              {t.about.tag}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mt-3 mb-6 leading-tight">
-              A Legacy of Industrial
+              {t.about.title1}
               <br />
-              Excellence
+              {t.about.title2}
             </h2>
             <div className="w-12 h-1 bg-accent mb-8" />
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Power Control Systems was established in 1994 as a specialized
-              supplier of gas equipment and industrial solutions. Over three
-              decades, we have built deep expertise in serving the oil, gas, and
-              industrial sectors across the region.
-            </p>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              In 2006, we underwent a strategic restructuring to better align
-              with evolving market demands, expanding our portfolio to include
-              instrumentation, hydraulic systems, and advanced safety equipment.
-            </p>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              Today, Power Control Systems stands as a trusted partner for
-              engineers and procurement professionals who demand quality,
-              reliability, and technical expertise.
-            </p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">{t.about.p1}</p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">{t.about.p2}</p>
+            <p className="text-gray-600 text-lg leading-relaxed">{t.about.p3}</p>
           </motion.div>
 
-          {/* Right: Stats grid */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -73,9 +61,7 @@ export default function About() {
                     <stat.icon className="text-primary" size={22} />
                   </div>
                 </div>
-                <div className="text-2xl font-bold text-primary mb-1">
-                  {stat.value}
-                </div>
+                <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
                 <div className="text-sm text-gray-500">{stat.label}</div>
               </motion.div>
             ))}
