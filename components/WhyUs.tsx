@@ -16,7 +16,7 @@ const features = [
     icon: BadgeCheck,
     title: "30+ Years of Proven Expertise",
     description:
-      "Three decades of hands-on experience in gas equipment and industrial solutions — our track record speaks for itself.",
+      "Three decades of hands-on experience in gas equipment and industrial solutions. Our track record speaks for itself.",
   },
   {
     icon: Clock,
@@ -40,7 +40,7 @@ const features = [
     icon: TrendingUp,
     title: "Comprehensive Product Range",
     description:
-      "From gas systems to hydraulics to safety equipment — a single supplier for your diverse industrial procurement needs.",
+      "From gas systems to hydraulics to safety equipment, a single supplier for your diverse industrial procurement needs.",
   },
 ];
 

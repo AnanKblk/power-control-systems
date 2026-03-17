@@ -43,7 +43,7 @@ export default function About() {
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               In 2006, we underwent a strategic restructuring to better align
-              with evolving market demands — expanding our portfolio to include
+              with evolving market demands, expanding our portfolio to include
               instrumentation, hydraulic systems, and advanced safety equipment.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">

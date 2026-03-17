@@ -23,7 +23,7 @@ const milestones = [
     year: "2010s",
     title: "Product Line Expansion",
     description:
-      "Expanded into instrumentation, hydraulic systems, and industrial safety equipment — meeting growing complexity in the oil & gas sector.",
+      "Expanded into instrumentation, hydraulic systems, and industrial safety equipment, meeting growing complexity in the oil & gas sector.",
     color: "bg-primary",
   },
   {

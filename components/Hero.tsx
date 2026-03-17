@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   const scrollTo = (anchor: string) => {
@@ -36,10 +37,29 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-sm px-4 py-2 rounded-full mb-8"
+          className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-sm px-4 py-2 rounded-full mb-6"
         >
           <span className="w-2 h-2 bg-accent rounded-full" />
-          Trusted Since 1994 — 30+ Years of Industrial Excellence
+          Trusted Since 1994 · 30+ Years of Industrial Excellence
+        </motion.div>
+
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="flex justify-center mb-8"
+        >
+          <div className="bg-white rounded-xl px-6 py-3 shadow-lg">
+            <Image
+              src="/Logo.jpeg"
+              alt="Power Control Systems"
+              width={240}
+              height={72}
+              className="h-16 w-auto object-contain"
+              priority
+            />
+          </div>
         </motion.div>
 
         {/* Headline */}
@@ -62,7 +82,7 @@ export default function Hero() {
           className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto mb-10"
         >
           Gas equipment, instrumentation, hydraulics, and industrial safety
-          systems — engineered solutions for the oil, gas, and industrial sectors.
+          systems, engineered solutions for the oil, gas, and industrial sectors.
         </motion.p>
 
         {/* CTAs */}

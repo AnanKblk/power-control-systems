@@ -40,7 +40,7 @@ export default function Mission() {
             </h2>
             <div className="w-12 h-1 bg-accent mb-8" />
             <p className="text-gray-600 text-lg leading-relaxed">
-              Our mission guides every decision we make — from the products we
+              Our mission guides every decision we make, from the products we
               source to the way we support our clients. We are driven by a
               commitment to excellence, reliability, and long-term value.
             </p>
