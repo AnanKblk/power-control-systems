@@ -43,9 +43,10 @@ export default function QuoteForm() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((p) => ({ ...p, [name]: value }));
-    if (errors[name as keyof FormData]) setErrors((p) => ({ ...p, [name]: undefined }));
+    const field = e.target.dataset.field as keyof FormData;
+    const { value } = e.target;
+    setFormData((p) => ({ ...p, [field]: value }));
+    if (errors[field]) setErrors((p) => ({ ...p, [field]: undefined }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -99,7 +100,7 @@ export default function QuoteForm() {
                   <label className="block text-sm font-semibold text-text-dark mb-2">
                     {t.quote.name} <span className="text-red-500">{t.quote.required}</span>
                   </label>
-                  <input type="text" name={ENTRY.name} value={formData.name} onChange={handleChange}
+                  <input type="text" name={ENTRY.name} data-field="name" value={formData.name} onChange={handleChange}
                     placeholder={t.quote.namePlaceholder}
                     className={`w-full px-4 py-3 border rounded-lg text-sm outline-none transition-colors duration-200 focus:border-primary ${errors.name ? "border-red-400 bg-red-50" : "border-border bg-white"}`}
                   />
@@ -109,7 +110,7 @@ export default function QuoteForm() {
                 {/* Company */}
                 <div>
                   <label className="block text-sm font-semibold text-text-dark mb-2">{t.quote.company}</label>
-                  <input type="text" name={ENTRY.company} value={formData.company} onChange={handleChange}
+                  <input type="text" name={ENTRY.company} data-field="company" value={formData.company} onChange={handleChange}
                     placeholder={t.quote.companyPlaceholder}
                     className="w-full px-4 py-3 border border-border rounded-lg text-sm outline-none bg-white focus:border-primary transition-colors duration-200"
                   />
@@ -118,7 +119,7 @@ export default function QuoteForm() {
                 {/* Phone */}
                 <div>
                   <label className="block text-sm font-semibold text-text-dark mb-2">{t.quote.phone}</label>
-                  <input type="tel" name={ENTRY.phone} value={formData.phone} onChange={handleChange}
+                  <input type="tel" name={ENTRY.phone} data-field="phone" value={formData.phone} onChange={handleChange}
                     placeholder={t.quote.phonePlaceholder}
                     className="w-full px-4 py-3 border border-border rounded-lg text-sm outline-none bg-white focus:border-primary transition-colors duration-200"
                   />
@@ -129,7 +130,7 @@ export default function QuoteForm() {
                   <label className="block text-sm font-semibold text-text-dark mb-2">
                     {t.quote.email} <span className="text-red-500">{t.quote.required}</span>
                   </label>
-                  <input type="email" name={ENTRY.email} value={formData.email} onChange={handleChange}
+                  <input type="email" name={ENTRY.email} data-field="email" value={formData.email} onChange={handleChange}
                     placeholder={t.quote.emailPlaceholder}
                     className={`w-full px-4 py-3 border rounded-lg text-sm outline-none transition-colors duration-200 focus:border-primary ${errors.email ? "border-red-400 bg-red-50" : "border-border bg-white"}`}
                   />
@@ -142,7 +143,7 @@ export default function QuoteForm() {
                 <label className="block text-sm font-semibold text-text-dark mb-2">
                   {t.quote.message} <span className="text-red-500">{t.quote.required}</span>
                 </label>
-                <textarea name={ENTRY.message} value={formData.message} onChange={handleChange}
+                <textarea name={ENTRY.message} data-field="message" value={formData.message} onChange={handleChange}
                   rows={5} placeholder={t.quote.messagePlaceholder}
                   className={`w-full px-4 py-3 border rounded-lg text-sm outline-none resize-none transition-colors duration-200 focus:border-primary ${errors.message ? "border-red-400 bg-red-50" : "border-border bg-white"}`}
                 />
