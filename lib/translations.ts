@@ -16,8 +16,8 @@ const translations = {
     // Hero
     hero: {
       badge: "Trusted Since 1994 · 30+ Years of Industrial Excellence",
-      headline1: "Powering Industry",
-      headline2: "With Precision",
+      headline1: "Built for the Kingdom,",
+      headline2: "Engineered for Industry",
       sub: "Gas equipment, instrumentation, hydraulics, and industrial safety systems, engineered solutions for the oil, gas, and industrial sectors.",
       cta1: "Get a Quote",
       cta2: "Our Products",
@@ -252,8 +252,8 @@ const translations = {
     // Hero
     hero: {
       badge: "موثوقون منذ 1994 · أكثر من 30 عاماً من التميّز الصناعي",
-      headline1: "نُشغّل الصناعة",
-      headline2: "بدقة واحترافية",
+      headline1: "صُنعنا للمملكة،",
+      headline2: "وهندسنا للصناعة",
       sub: "معدات الغاز، الأجهزة الدقيقة، الهيدروليك، وأنظمة السلامة الصناعية — حلول هندسية متكاملة لقطاعات النفط والغاز والصناعة.",
       cta1: "احصل على عرض سعر",
       cta2: "منتجاتنا",
